@@ -20,9 +20,9 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="../bower_components/iron-pages/iron-pages.html">
 <link rel="import" href="../bower_components/iron-selector/iron-selector.html">
 <link rel="import" href="../bower_components/paper-icon-button/paper-icon-button.html">
-<link rel="import" href="my-icons.html">
+<link rel="import" href="pm-icons.html">
 
-<dom-module id="my-app">
+<dom-module id="pm-app">
   <template>
     <style>
       :host {
@@ -77,16 +77,16 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
         <app-header condenses reveals effects="waterfall">
           <app-toolbar>
-            <paper-icon-button icon="my-icons:menu" drawer-toggle></paper-icon-button>
+            <paper-icon-button icon="pm-icons:menu" drawer-toggle></paper-icon-button>
             <div main-title>Pomoves</div>
           </app-toolbar>
         </app-header>
 
         <iron-pages selected="[[page]]" attr-for-selected="name" fallback-selection="view404" role="main">
-          <my-view1 name="view1"></my-view1>
-          <my-view2 name="view2"></my-view2>
-          <my-view3 name="view3"></my-view3>
-          <my-view404 name="view404"></my-view404>
+          <pm-view1 name="view1"></pm-view1>
+          <pm-view2 name="view2"></pm-view2>
+          <pm-view3 name="view3"></pm-view3>
+          <pm-view404 name="view404"></pm-view404>
         </iron-pages>
       </app-header-layout>
     </app-drawer-layout>
@@ -94,7 +94,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
   <script>
     Polymer({
-      is: 'my-app',
+      is: 'pm-app',
 
       properties: {
         page: {
@@ -118,7 +118,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
       _pageChanged: function (page) {
         // Load page import on demand. Show 404 page if fails
-        var resolvedPageUrl = this.resolveUrl('my-' + page + '.html');
+        var resolvedPageUrl = this.resolveUrl('pm-' + page + '.html');
         this.importHref(resolvedPageUrl, null, this._showPage404, true);
       },
 
